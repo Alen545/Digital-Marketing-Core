@@ -17,6 +17,7 @@ function GuestNav() {
           <img
             src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
             className="w-48"
+            onClick={() => navigate("/")}
             alt="Logo"
           />
         </div>
@@ -58,12 +59,6 @@ function GuestNav() {
               </svg>
             </button>
             <div className="flex flex-col items-center justify-center md:block">
-              <a
-                href="#"
-                className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-gray-600 md:mr-8 text-lg md:text-sm font-bold tracking-wide my-4 md:my-0"
-              >
-                Blog
-              </a>
               <a
                 onClick={() => navigate("/login")}
                 className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-indigo-600 md:mr-8 text-lg md:text-sm font-bold tracking-wide my-4 md:my-0"

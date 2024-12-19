@@ -99,13 +99,14 @@ function GuestHome() {
         </div>
 
         {/* Features */}
+        {/* Features */}
         <div
           className="px-5 sm:px-10 md:px-20 lg:px-10 xl:px-20 py-8 bg-indigo-100"
           id="features"
         >
           <div className="max-w-screen-xl mx-auto">
-            <h3 className="leading-none font-black text-3xl">Features</h3>
-            <div className="flex flex-col items-center flex-wrap lg:flex-row lg:items-stretch lg:flex-nowrap lg:justify-between">
+            <h3 className="leading-none font-black text-3xl mb-6">Features</h3>
+            <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {/* Feature Cards */}
               {[
                 {
@@ -132,7 +133,7 @@ function GuestHome() {
               ].map((feature, idx) => (
                 <div
                   key={idx}
-                  className="w-full max-w-sm mt-8 bg-gray-100 rounded shadow-lg p-12 lg:p-8 lg:mx-4 xl:p-12"
+                  className="bg-gray-100 rounded shadow-lg p-6 sm:p-8"
                 >
                   <div
                     className={`p-4 inline-block ${feature.color} rounded-lg`}
@@ -162,6 +163,7 @@ function GuestHome() {
             </div>
           </div>
         </div>
+        <div></div>
       </main>
 
       {/* Footer */}

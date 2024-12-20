@@ -32,13 +32,11 @@ function Register() {
   const handleBusinessSubmit = (e) => {
     e.preventDefault();
     console.log("Business Details:", businessDetails);
-    // Add API call for business registration here
   };
 
   const handleUserSubmit = (e) => {
     e.preventDefault();
     console.log("User Details:", userDetails);
-    // Add API call for user registration here
   };
 
   const handleChange = (setter) => (e) => {
@@ -46,127 +44,127 @@ function Register() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 text-gray-900">
+    <div className="flex flex-col min-h-screen">
       {/* Guest Navigation */}
       <GuestNav />
 
       {/* Main Registration Section */}
-      <div className="flex-grow flex justify-center items-center">
-        <div className="max-w-screen-lg m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-col w-full">
-          <div className="flex justify-center border-b border-gray-200">
+      <div className="flex-grow flex bg-gradient-to-r from-indigo-500 to-purple-500 justify-center items-center py-10 ">
+        <div className="bg-white text-gray-900 shadow-lg rounded-xl overflow-hidden max-w-3xl w-full">
+          {/* Tabs */}
+          <div className="flex">
             <button
-              className={`px-4 py-2 w-full ${
+              className={`w-1/2 py-4 text-center font-semibold text-lg ${
                 activeTab === "business"
-                  ? "text-indigo-600 border-b-2 border-indigo-600"
-                  : "text-gray-500"
-              }`}
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-200 text-gray-700"
+              } transition duration-300`}
               onClick={() => setActiveTab("business")}
             >
               Business Owner
             </button>
             <button
-              className={`px-4 py-2 w-full ${
+              className={`w-1/2 py-4 text-center font-semibold text-lg ${
                 activeTab === "user"
-                  ? "text-indigo-600 border-b-2 border-indigo-600"
-                  : "text-gray-500"
-              }`}
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-200 text-gray-700"
+              } transition duration-300`}
               onClick={() => setActiveTab("user")}
             >
               User
             </button>
           </div>
 
-          {activeTab === "business" ? (
-            <form
-              onSubmit={handleBusinessSubmit}
-              className="p-6 sm:p-12 flex flex-col items-center"
-            >
-              <h2 className="text-2xl font-bold mb-6">
-                Business Owner Registration
-              </h2>
-              {[
-                { label: "First Name", name: "firstName" },
-                { label: "Last Name", name: "lastName" },
-                { label: "Company Name", name: "companyName" },
-                { label: "Company Identifier", name: "companyIdentifier" },
-                { label: "Phone", name: "phone" },
-                { label: "Email", name: "email" },
-                { label: "Location", name: "location" },
-                { label: "Website", name: "website" },
-                { label: "Username", name: "username" },
-                { label: "Password", name: "password", type: "password" },
-              ].map(({ label, name, type = "text" }) => (
-                <input
-                  key={name}
-                  type={type}
-                  name={name}
-                  placeholder={label}
-                  value={businessDetails[name]}
-                  onChange={handleChange(setBusinessDetails)}
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-4"
-                />
-              ))}
-              <button
-                type="submit"
-                className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-              >
-                Register as Business
-              </button>
-            </form>
-          ) : (
-            <form
-              onSubmit={handleUserSubmit}
-              className="p-6 sm:p-12 flex flex-col items-center"
-            >
-              <h2 className="text-2xl font-bold mb-6">User Registration</h2>
-              <select
-                name="department"
-                value={userDetails.department}
-                onChange={handleChange(setUserDetails)}
-                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-4"
-              >
-                <option value="">Select Department</option>
-                <option value="HR">HR</option>
-                <option value="IT">IT</option>
-                <option value="Marketing">Marketing</option>
-              </select>
-              <select
-                name="designation"
-                value={userDetails.designation}
-                onChange={handleChange(setUserDetails)}
-                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-4"
-              >
-                <option value="">Select Designation</option>
-                <option value="Manager">Manager</option>
-                <option value="Team Lead">Team Lead</option>
-                <option value="Staff">Staff</option>
-              </select>
-              {[
-                { label: "First Name", name: "firstName" },
-                { label: "Last Name", name: "lastName" },
-                { label: "Email", name: "email" },
-                { label: "Phone", name: "phone" },
-                { label: "Username", name: "username" },
-                { label: "Password", name: "password", type: "password" },
-              ].map(({ label, name, type = "text" }) => (
-                <input
-                  key={name}
-                  type={type}
-                  name={name}
-                  placeholder={label}
-                  value={userDetails[name]}
+          {/* Form Content */}
+          <div className="p-6 sm:p-10">
+            {activeTab === "business" ? (
+              <form onSubmit={handleBusinessSubmit} className="space-y-6">
+                <h2 className="text-2xl font-bold text-center mb-4">
+                  Register as Business Owner
+                </h2>
+                {[
+                  { label: "First Name", name: "firstName" },
+                  { label: "Last Name", name: "lastName" },
+                  { label: "Company Name", name: "companyName" },
+                  { label: "Company Identifier", name: "companyIdentifier" },
+                  { label: "Phone", name: "phone" },
+                  { label: "Email", name: "email" },
+                  { label: "Location", name: "location" },
+                  { label: "Website", name: "website" },
+                  { label: "Username", name: "username" },
+                  { label: "Password", name: "password", type: "password" },
+                ].map(({ label, name, type = "text" }) => (
+                  <input
+                    key={name}
+                    type={type}
+                    name={name}
+                    placeholder={label}
+                    value={businessDetails[name]}
+                    onChange={handleChange(setBusinessDetails)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-500 focus:outline-none"
+                  />
+                ))}
+                <button
+                  type="submit"
+                  className="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300"
+                >
+                  Register
+                </button>
+              </form>
+            ) : (
+              <form onSubmit={handleUserSubmit} className="space-y-6">
+                <h2 className="text-2xl font-bold text-center mb-4">
+                  Register as User
+                </h2>
+                <select
+                  name="department"
+                  value={userDetails.department}
                   onChange={handleChange(setUserDetails)}
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-4"
-                />
-              ))}
-              <button
-                type="submit"
-                className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-              >
-                Register as User
-              </button>
-            </form>
-          )}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-500 focus:outline-none"
+                >
+                  <option value="">Select Department</option>
+                  <option value="HR">HR</option>
+                  <option value="IT">IT</option>
+                  <option value="Marketing">Marketing</option>
+                </select>
+                <select
+                  name="designation"
+                  value={userDetails.designation}
+                  onChange={handleChange(setUserDetails)}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-500 focus:outline-none"
+                >
+                  <option value="">Select Designation</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Team Lead">Team Lead</option>
+                  <option value="Staff">Staff</option>
+                </select>
+                {[
+                  { label: "First Name", name: "firstName" },
+                  { label: "Last Name", name: "lastName" },
+                  { label: "Email", name: "email" },
+                  { label: "Phone", name: "phone" },
+                  { label: "Username", name: "username" },
+                  { label: "Password", name: "password", type: "password" },
+                ].map(({ label, name, type = "text" }) => (
+                  <input
+                    key={name}
+                    type={type}
+                    name={name}
+                    placeholder={label}
+                    value={userDetails[name]}
+                    onChange={handleChange(setUserDetails)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-500 focus:outline-none"
+                  />
+                ))}
+                <button
+                  type="submit"
+                  className="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-300"
+                >
+                  Register
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
 

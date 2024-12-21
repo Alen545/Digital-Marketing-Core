@@ -4,6 +4,8 @@ import GuestHome from "./pages/GuestHome";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+import './App.css'
+
 import AdminDashBoard from "./components/Admin/AdminDashBoard";
 function App() {
   return (

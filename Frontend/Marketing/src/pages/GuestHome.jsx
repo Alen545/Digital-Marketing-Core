@@ -9,22 +9,21 @@ function GuestHome() {
       <GuestNav />
 
       {/* Main Content */}
-      <main className="py-2 bg-gray-100 text-gray-900 min-h-screen">
+      <main className="py-4 bg-gray-100 text-gray-900 min-h-screen">
         <div id="hero" className="pt-5 lg:flex items-center">
           {/* Left Section */}
-          <div className="px-5 sm:px-10 md:px-10 md:flex lg:block lg:w-1/2 lg:max-w-3xl lg:mr-8 lg:px-20">
-            <div className="md:w-1/2 md:mr-10 lg:w-full lg:mr-0">
-              <h1 className="text-3xl xl:text-4xl font-black md:leading-none xl:leading-tight">
-                Hire a Designer Near You
-              </h1>
-              <p className="mt-4 xl:mt-2">
-                World-Class Designers, just for you on contract, full-time or
-                part-time, whatever you need.
-              </p>
-            </div>
+          <div className="px-5 sm:px-10 md:px-10 lg:w-1/2 lg:max-w-3xl lg:mr-8 lg:px-20">
+            <h1 className="text-3xl xl:text-4xl font-black md:leading-none xl:leading-tight">
+              Get ready to LOL while your business goes viral 🚀😂 – Let’s turn
+              your brand into a digital comedy sensation!
+            </h1>
+            <p className="mt-4 xl:mt-2 text-lg sm:text-xl">
+              Hire the funniest and most talented designers on the internet 🌍✨
+              – full-time, part-time, or just for giggles.
+            </p>
 
             {/* Search Inputs */}
-            <div className="flex-1">
+            <div className="mt-6 lg:mt-4">
               <div className="relative mt-4 md:mt-0 lg:mt-4">
                 <div className="pl-4 pr-4 h-full absolute bottom-0 left-0 flex items-center">
                   <svg
@@ -44,7 +43,7 @@ function GuestHome() {
                 <input
                   type="text"
                   className="w-full border bg-gray-100 px-4 py-4 text-sm tracking-wide focus:outline-none focus:shadow-outline rounded pl-12"
-                  placeholder="Type (e.g junior, senior)"
+                  placeholder="Type (e.g junior, senior) 🤓"
                 />
               </div>
               <div className="relative mt-4">
@@ -66,12 +65,12 @@ function GuestHome() {
                 <input
                   type="text"
                   className="w-full border bg-gray-100 px-4 py-4 text-sm tracking-wide focus:outline-none focus:shadow-outline rounded pl-12"
-                  placeholder="Mountain View, California"
+                  placeholder="Location (e.g. Mountain View, California) 🏖️"
                 />
               </div>
               <div>
                 <button className="transition-all duration-300 mt-5 w-full border border-transparent rounded font-semibold tracking-wide text-sm px-5 py-4 focus:outline-none focus:shadow-outline bg-indigo-500 text-gray-100 hover:bg-indigo-600 hover:text-gray-200">
-                  Find Designers
+                  Find Designers 🤩
                 </button>
               </div>
             </div>
@@ -82,7 +81,7 @@ function GuestHome() {
             <img
               src="https://images.unsplash.com/photo-1524749292158-7540c2494485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=85"
               alt="Designers"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
         </div>
@@ -99,34 +98,34 @@ function GuestHome() {
         </div>
 
         {/* Features */}
-        {/* Features */}
         <div
           className="px-5 sm:px-10 md:px-20 lg:px-10 xl:px-20 py-8 bg-indigo-100"
           id="features"
         >
           <div className="max-w-screen-xl mx-auto">
-            <h3 className="leading-none font-black text-3xl mb-6">Features</h3>
+            <h3 className="leading-none font-black text-3xl mb-6">
+              Our Features 🤩
+            </h3>
             <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Feature Cards */}
               {[
                 {
-                  title: "Amazing People",
+                  title: "Amazing People 🤗",
                   description:
-                    "We guarantee that every designer you ever work with will be an awesome member for your team.",
+                    "We guarantee that every designer you ever work with will be an awesome member for your team 🤝.",
                   color: "bg-indigo-200",
                   iconColor: "text-indigo-500",
                 },
                 {
-                  title: "Best Rates",
+                  title: "Best Rates 💸",
                   description:
-                    "Be assured that you will always get the best rates. We monitor trends to ensure fairness.",
+                    "We monitor trends to ensure that you always get the best rates 💵. Money matters, but so does fun!",
                   color: "bg-green-200",
                   iconColor: "text-green-500",
                 },
                 {
-                  title: "Abuse Protection",
+                  title: "Abuse Protection 🛡️",
                   description:
-                    "Money is held by us in escrow. Customer service reviews any disputes personally.",
+                    "Money is held by us in escrow 💼, and customer service reviews any disputes personally. We're always on guard! ⚔️",
                   color: "bg-red-200",
                   iconColor: "text-red-500",
                 },
@@ -148,7 +147,6 @@ function GuestHome() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      {/* SVG Placeholder */}
                       <circle cx="12" cy="12" r="10" />
                       <line x1="9" y1="9" x2="9.01" y2="9" />
                       <line x1="15" y1="9" x2="15.01" y2="9" />
@@ -163,7 +161,107 @@ function GuestHome() {
             </div>
           </div>
         </div>
-        <div></div>
+
+        {/* Services Section */}
+        <div className="px-5 sm:px-10 md:px-20 py-8 bg-blue-50" id="services">
+          <div className="max-w-screen-xl mx-auto">
+            <h3 className="leading-none font-black text-3xl mb-6">
+              Our Hilarious Services 🤪
+            </h3>
+            <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "UI/UX Design 🖌️",
+                  description:
+                    "We create beautiful, user-friendly designs that will make your users say ‘Wow!’ 🤩.",
+                  icon: "🎨",
+                },
+                {
+                  title: "Web Development 🌐",
+                  description:
+                    "Building modern, responsive websites that will make your competitors cry 😢.",
+                  icon: "💻",
+                },
+                {
+                  title: "Mobile App Development 📱",
+                  description:
+                    "Developing intuitive mobile applications that will keep users glued to their screens 📲.",
+                  icon: "📱",
+                },
+              ].map((service, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded shadow-lg p-6 sm:p-8"
+                >
+                  <div className="text-4xl">{service.icon}</div>
+                  <div className="mt-4 font-extrabold text-2xl tracking-wide">
+                    {service.title}
+                  </div>
+                  <div className="text-sm">{service.description}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Us Section */}
+        <div className="px-5 sm:px-10 md:px-20 py-8 bg-green-50" id="contact">
+          <div className="max-w-screen-xl mx-auto">
+            <h3 className="leading-none font-black text-3xl mb-6">
+              Contact Us 📞
+            </h3>
+            <form className="bg-white rounded-lg shadow-lg p-6">
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Your Name 😁
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full border bg-gray-100 px-4 py-2 mt-2 rounded"
+                  placeholder="Enter your name 🤗"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Your Email 📧
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full border bg-gray-100 px-4 py-2 mt-2 rounded"
+                  placeholder="Enter your email 📨"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Your Message 💬
+                </label>
+                <textarea
+                  id="message"
+                  className="w-full border bg-gray-100 px-4 py-2 mt-2 rounded"
+                  rows="4"
+                  placeholder="Write your message 🤔"
+                />
+              </div>
+              <button
+                type="submit"
+                className="transition-all duration-300 w-full border border-transparent rounded font-semibold tracking-wide text-sm px-5 py-4 focus:outline-none focus:shadow-outline bg-green-500 text-gray-100 hover:bg-green-600"
+              >
+                Send Message 📩
+              </button>
+            </form>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}

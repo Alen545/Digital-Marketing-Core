@@ -3,24 +3,71 @@ import { useNavigate } from "react-router-dom";
 
 function GuestNav() {
   const [navOpen, setNavOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
   };
 
-  const navigate = useNavigate();
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Implement search functionality here
+      console.log("Searching for:", searchQuery);
+    }
+  };
 
   return (
     <div>
-      <header className="px-5 sm:px-10 md:px-10 md:py-5 lg:px-20 flex items-center justify-between">
-        <div>
-          <img
-            src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
-            className="w-48"
+      <header className="px-5 sm:px-10 md:px-10 py-3 lg:px-20 flex items-center justify-between bg-white shadow-md rounded-lg">
+        <div className="flex items-center">
+          <h1
             onClick={() => navigate("/")}
-            alt="Logo"
-          />
+            className="text-3xl font-bold cursor-pointer text-indigo-600 hover:text-indigo-800 transition-all duration-300"
+          >
+            D'Core
+          </h1>
         </div>
+
+        {/* Search Bar */}
+        <div className="flex items-center justify-center w-full">
+          <form
+            onSubmit={handleSearchSubmit}
+            className="w-full max-w-xl flex items-center space-x-3 p-2 rounded-full border-2 border-indigo-400 bg-transparent shadow-lg focus-within:ring-4 focus-within:ring-indigo-300 transition-all duration-300"
+          >
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="Search here..."
+              className="w-full py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg text-gray-800"
+            />
+            <button
+              type="submit"
+              className="bg-white text-indigo-600 p-2 rounded-full hover:bg-indigo-100 transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35M10 17a7 7 0 1 1 7-7 7 7 0 0 1-7 7z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        {/* Menu Button for mobile */}
         <div>
           <button onClick={toggleNav}>
             <svg
@@ -61,16 +108,10 @@ function GuestNav() {
             <div className="flex flex-col items-center justify-center md:block">
               <a
                 onClick={() => navigate("/login")}
-                className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-indigo-600 md:mr-8 text-lg md:text-sm font-bold tracking-wide my-4 md:my-0"
+                className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-indigo-600 md:mr-8 text-xl font-bold tracking-wide my-4 md:my-0"
               >
                 Login
               </a>
-              <button
-                className="border border-transparent rounded font-semibold tracking-wide text-lg md:text-sm px-5 py-3 md:py-2 focus:outline-none focus:shadow-outline bg-indigo-600 text-gray-100 hover:bg-indigo-800 hover:text-gray-200 transition-all duration-300 ease-in-out my-4 md:my-0 w-full md:w-auto"
-                onClick={() => navigate("/register")}
-              >
-                Sign Up
-              </button>
             </div>
           </div>
         </div>

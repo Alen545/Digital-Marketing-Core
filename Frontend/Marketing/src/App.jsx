@@ -7,7 +7,9 @@ import Register from "./pages/Register";
 import "./App.css";
 
 import AdminDashBoard from "./components/Admin/AdminDashBoard";
-import AdminHome from "./components/Admin/AdminHome";
+import AdminChart from "./components/Admin/AdminChart";
+import AdminNotifications from "./components/Admin/AdminNotifications";
+import AdminSettings from "./components/Admin/AdminSettings";
 
 function App() {
   return (
@@ -19,7 +21,12 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/admin/adminDashBoard" element={<AdminDashBoard />} />
-          <Route path="/admin/adminHome" element={<AdminHome />} />
+          <Route path="/admin/adminChart" element={<AdminChart />} />
+          <Route
+            path="/admin/adminNotifications"
+            element={<AdminNotifications />}
+          />
+          <Route path="/admin/adminSettings" element={<AdminSettings />} />
         </Routes>
       </BrowserRouter>
     </div>

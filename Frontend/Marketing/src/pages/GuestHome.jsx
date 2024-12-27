@@ -162,6 +162,92 @@ function GuestHome() {
           </div>
         </div>
 
+        {/* SEO Optimization Section */}
+        <div
+          className="px-5 sm:px-10 md:px-20 py-8 bg-purple-50"
+          id="seo-optimization"
+        >
+          <div className="max-w-screen-xl mx-auto">
+            <h3 className="leading-none font-black text-3xl mb-6">
+              SEO Optimization 🚀
+            </h3>
+            <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Keyword Research 📊",
+                  description:
+                    "Discover the right keywords to drive traffic and boost your search rankings effortlessly.",
+                },
+                {
+                  title: "On-Page Optimization 🛠️",
+                  description:
+                    "Improve your website's structure and content to enhance search engine visibility.",
+                },
+                {
+                  title: "Link Building 🔗",
+                  description:
+                    "Increase your website's authority with high-quality backlinks from trusted sources.",
+                },
+              ].map((service, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded shadow-lg p-6 sm:p-8"
+                >
+                  <div className="text-xl font-bold text-indigo-600">
+                    {service.title}
+                  </div>
+                  <div className="text-sm mt-2 text-gray-700">
+                    {service.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media Management Section */}
+        <div
+          className="px-5 sm:px-10 md:px-20 py-8 bg-yellow-50"
+          id="social-media-management"
+        >
+          <div className="max-w-screen-xl mx-auto">
+            <h3 className="leading-none font-black text-3xl mb-6">
+              Social Media Management 📱
+            </h3>
+            <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Content Creation ✍️",
+                  description:
+                    "Engage your audience with creative posts tailored to your brand identity.",
+                },
+                {
+                  title: "Platform Strategy 🎯",
+                  description:
+                    "Maximize your reach by implementing strategies unique to each platform.",
+                },
+                {
+                  title: "Analytics and Insights 📈",
+                  description:
+                    "Track performance metrics to refine your social media campaigns for better results.",
+                },
+              ].map((service, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded shadow-lg p-6 sm:p-8"
+                >
+                  <div className="text-xl font-bold text-blue-600">
+                    {service.title}
+                  </div>
+                  <div className="text-sm mt-2 text-gray-700">
+                    {service.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Services Section */}
         <div className="px-5 sm:px-10 md:px-20 py-8 bg-blue-50" id="services">
           <div className="max-w-screen-xl mx-auto">
@@ -200,6 +286,51 @@ function GuestHome() {
                   <div className="text-sm">{service.description}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Animated Video Marketing Section */}
+        <div
+          className="px-5 sm:px-10 md:px-20 py-8 bg-teal-50"
+          id="animated-video-marketing"
+        >
+          <div className="max-w-screen-xl mx-auto">
+            <h3 className="leading-none font-black text-3xl mb-6 text-center md:text-left">
+              Animated Video Marketing 🎥
+            </h3>
+            <div className="flex flex-wrap md:flex-nowrap items-center gap-6">
+              {/* Text Content */}
+              {/* Text Content */}
+              <div className="flex-1 text-center md:text-left px-2 sm:px-4">
+                <h4 className="text-xl font-bold text-teal-600 mb-4">
+                  Bring Your Brand to Life 🎬
+                </h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  Captivate your audience with stunning animations that convey
+                  your brand's story and message effectively. From product demos
+                  to explainer videos, we’ve got you covered.
+                </p>
+                <ul className="list-disc list-inside text-sm text-gray-700 px-4 sm:px-6 md:px-0">
+                  <li>Custom Storyboarding 🎨</li>
+                  <li>Professional Animation 🎞️</li>
+                  <li>Brand-Focused Messaging 📢</li>
+                </ul>
+              </div>
+
+              {/* Animated Video Placeholder */}
+              <div className="flex-1 w-full">
+                <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 bg-gray-300 rounded shadow-md">
+                  <iframe
+                    className="absolute inset-0 w-full h-full rounded"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Animated Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>

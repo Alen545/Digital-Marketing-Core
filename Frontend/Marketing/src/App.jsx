@@ -7,7 +7,6 @@ import Register from "./pages/Register";
 import "./App.css";
 
 import AdminDashBoard from "./components/Admin/AdminDashBoard";
-import AdminChart from "./components/Admin/AdminChart";
 import AdminNotifications from "./components/Admin/AdminNotifications";
 import AdminSettings from "./components/Admin/AdminSettings";
 
@@ -21,7 +20,6 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/admin/adminDashBoard" element={<AdminDashBoard />} />
-          <Route path="/admin/adminChart" element={<AdminChart />} />
           <Route
             path="/admin/adminNotifications"
             element={<AdminNotifications />}

@@ -34,15 +34,6 @@ function AdminSideBar() {
 
         {/* Menu Icons */}
         <div className="flex flex-col space-y-8 text-white">
-          <div
-            className="flex flex-col items-center cursor-pointer group"
-            onClick={() => navigate("/admin/adminChart")}
-          >
-            <i className="fas fa-chart-line text-2xl group-hover:text-yellow-300"></i>
-            <span className="text-sm text-transparent group-hover:text-white transition-all">
-              Chart
-            </span>
-          </div>
           <div className="flex flex-col items-center cursor-pointer group">
             <i
               className="fas fa-bell text-2xl group-hover:text-green-300"
@@ -68,7 +59,8 @@ function AdminSideBar() {
           className="flex flex-col items-center cursor-pointer group mt-auto mb-6"
           onClick={handleLogout}
         >
-          <CiLogout className="text-white text-3xl group-hover:text-red-300" /> {/* Updated color and size */}
+          <CiLogout className="text-white text-3xl group-hover:text-red-300" />{" "}
+          {/* Updated color and size */}
           <span className="text-sm text-transparent group-hover:text-white transition-all">
             Logout
           </span>

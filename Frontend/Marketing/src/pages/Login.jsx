@@ -13,7 +13,7 @@ function Login() {
       <div className="flex flex-1 lg:flex-row">
         {/* Left Section (Login Form) */}
         <div className="lg:w-1/2 xl:max-w-screen-sm p-10 ml-10">
-          <div className="text-center py-12 lg:bg-white rounded-xl shadow-md">
+          <div className="text-center py-12 lg:bg-white rounded-xl ">
             <h2 className="text-3xl font-semibold text-indigo-800 mb-6">
               🚀 Log in to your account
             </h2>

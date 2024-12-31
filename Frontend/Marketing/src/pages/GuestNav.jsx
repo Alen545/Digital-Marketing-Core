@@ -108,7 +108,7 @@ function GuestNav() {
             <div className="flex flex-col items-center justify-center md:block">
               <a
                 onClick={() => navigate("/login")}
-                className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-indigo-600 md:mr-8 text-xl font-bold tracking-wide my-4 md:my-0"
+                className="transition-all duration-100 ease-in-out pb-1 border-b-2 text-indigo-500 border-transparent hover:border-indigo-300 hover:text-indigo-600 md:mr-8 text-xl font-bold tracking-wide my-4 md:my-0 border-2 border-indigo-600 rounded-full px-6 py-2"
               >
                 Login
               </a>

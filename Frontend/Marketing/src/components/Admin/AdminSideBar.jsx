@@ -36,15 +36,6 @@ function AdminSideBar() {
         <div className="flex flex-col space-y-8 text-white">
           <div className="flex flex-col items-center cursor-pointer group">
             <i
-              className="fas fa-bell text-2xl group-hover:text-green-300"
-              onClick={() => navigate("/admin/adminNotifications")}
-            ></i>
-            <span className="text-sm text-transparent group-hover:text-white transition-all">
-              Alerts
-            </span>
-          </div>
-          <div className="flex flex-col items-center cursor-pointer group">
-            <i
               className="fas fa-cog text-2xl group-hover:text-red-300"
               onClick={() => navigate("/admin/adminSettings")}
             ></i>

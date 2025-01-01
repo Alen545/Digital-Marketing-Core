@@ -7,7 +7,6 @@ import Register from "./pages/Register";
 import "./App.css";
 
 import AdminDashBoard from "./components/Admin/AdminDashBoard";
-import AdminNotifications from "./components/Admin/AdminNotifications";
 import AdminSettings from "./components/Admin/AdminSettings";
 
 function App() {
@@ -20,10 +19,6 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/admin/adminDashBoard" element={<AdminDashBoard />} />
-          <Route
-            path="/admin/adminNotifications"
-            element={<AdminNotifications />}
-          />
           <Route path="/admin/adminSettings" element={<AdminSettings />} />
         </Routes>
       </BrowserRouter>

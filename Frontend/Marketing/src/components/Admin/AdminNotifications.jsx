@@ -1,8 +1,6 @@
 import React from "react";
-import AdminSideBar from "./AdminSideBar";
 
 function AdminNotifications() {
-  // Example notifications
   const notifications = [
     {
       id: 1,
@@ -34,46 +32,53 @@ function AdminNotifications() {
     },
   ];
 
-  // Notification type colors
   const typeColors = {
-    info: "bg-blue-500",
-    success: "bg-green-500",
-    warning: "bg-yellow-500",
-    error: "bg-red-500",
+    info: "bg-blue-100 border-blue-500 text-blue-800",
+    success: "bg-green-100 border-green-500 text-green-800",
+    warning: "bg-yellow-100 border-yellow-500 text-yellow-800",
+    error: "bg-red-100 border-red-500 text-red-800",
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      <AdminSideBar />
+    <div className="p-6 bg-gray-50 min-h-screen">
+      {/* Header */}
+      <div className="mb-6 text-center">
+        <h1 className="text-3xl font-bold text-gray-800">Notifications</h1>
+        <p className="text-gray-600">Stay updated with recent activities</p>
+      </div>
 
-      <div className="flex-1 lg:ml-16 p-6 overflow-y-auto">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-800">Notifications</h1>
-          <p className="text-gray-600">Stay updated with recent activities</p>
-        </div>
-
-        {/* Notifications List */}
-        <div className="space-y-4">
-          {notifications.map((notification) => (
-            <div
-              key={notification.id}
-              className={`flex items-center justify-between p-4 rounded-lg shadow-lg ${
-                typeColors[notification.type]
-              } text-white`}
-            >
-              <div>
-                <h2 className="font-bold text-lg">{notification.title}</h2>
-                <p className="text-sm">{notification.message}</p>
-                <p className="text-xs mt-2 opacity-75">{notification.time}</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <i className="fas fa-bell text-xl"></i>
-                <i className="fas fa-times-circle text-xl cursor-pointer hover:opacity-75"></i>
-              </div>
+      {/* Notifications Container */}
+      <div className="w-full max-w-8xl mx-auto space-y-4">
+        {notifications.map((notification) => (
+          <div
+            key={notification.id}
+            className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-lg shadow border-l-4 ${
+              typeColors[notification.type]
+            }`}
+          >
+            {/* Content */}
+            <div className="flex-1">
+              <h2 className="font-bold text-lg">{notification.title}</h2>
+              <p className="text-sm mt-1">{notification.message}</p>
+              <p className="text-xs mt-2 text-gray-500">{notification.time}</p>
             </div>
-          ))}
-        </div>
+            {/* Actions */}
+            <div className="flex items-center mt-4 sm:mt-0 space-x-3">
+              <button
+                className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                aria-label="Bell Icon"
+              >
+                <i className="fas fa-bell text-gray-600"></i>
+              </button>
+              <button
+                className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full hover:bg-gray-300 transition"
+                aria-label="Close Icon"
+              >
+                <i className="fas fa-times text-gray-600"></i>
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

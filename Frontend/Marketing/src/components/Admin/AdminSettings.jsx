@@ -8,12 +8,14 @@ function AdminSettings() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className={`flex h-screen ${darkMode ? "bg-gray-900" : "bg-gray-50"}`}>
+    <div className="flex flex-col lg:flex-row h-screen">
+      {/* Sidebar */}
       <AdminSideBar />
 
+      {/* Main Content */}
       <div
-        className={`flex-1 lg:ml-16 p-6 overflow-y-auto ${
-          darkMode ? "text-white" : "text-gray-800"
+        className={`flex-1 lg:ml-64 p-6 overflow-y-auto bg-gray-50 ${
+          darkMode ? "text-white bg-gray-800" : "text-gray-800 bg-white"
         }`}
       >
         {/* Header */}

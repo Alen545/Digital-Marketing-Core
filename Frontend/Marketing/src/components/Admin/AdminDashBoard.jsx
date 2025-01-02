@@ -13,12 +13,12 @@ import AdSpendAnalytics from "./AdSpendAnalytics"; // New section
 
 function AdminDashBoard() {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex flex-col lg:flex-row h-screen">
       {/* Sidebar */}
       <AdminSideBar />
 
       {/* Main Content */}
-      <div className="flex-1 lg:ml-16 p-6 overflow-y-auto">
+      <div className="flex-1 lg:ml-64 p-4 overflow-y-auto bg-gray-50 ">
         {/* User Info */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center space-x-4">

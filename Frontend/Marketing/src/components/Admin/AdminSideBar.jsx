@@ -1,27 +1,54 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CiLogout } from "react-icons/ci";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  FaBars,
+  FaAd,
+  FaChartBar,
+  FaCog,
+  FaSignOutAlt,
+  FaTimes,
+} from "react-icons/fa"; // Add FaTimes for the close icon
+import { MdGroup } from "react-icons/md";
 
 function AdminSideBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAdsDropdownOpen, setAdsDropdownOpen] = useState(false);
+
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    // Logic to clear user session (e.g., remove token or user info from localStorage)
-    localStorage.removeItem("authToken");
-    navigate("/login"); // Redirect to login page after logout
+  const toggleCourseDropdown = () => {
+    setAdsDropdownOpen(!isAdsDropdownOpen);
+  };
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
     <div>
+      {/* Hamburger Menu for Mobile View */}
+      <button
+        className="top-4 left-4 z-50 lg:hidden text-white bg-gradient-to-r from-pink-500 to-yellow-500 p-3 rounded-full"
+        onClick={toggleSidebar}
+      >
+        <FaBars size={24} />
+      </button>
+
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen bg-gradient-to-b from-purple-500 to-indigo-600 flex flex-col items-center py-6 z-50 ${
-          isOpen || window.innerWidth >= 1024 ? "w-20" : "w-0"
-        } lg:w-20 overflow-hidden transition-all duration-300`}
+        className={`fixed top-0 left-0 h-screen bg-gradient-to-b from-pink-500 to-indigo-600 text-white transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:translate-x-0 w-64 z-40 transition-transform duration-300`}
       >
+        {/* Close Icon for Mobile */}
+        <div className="absolute top-4 right-4 z-50 lg:hidden">
+          <button onClick={toggleSidebar} className="text-white">
+            <FaTimes size={24} />
+          </button>
+        </div>
+
         {/* Logo */}
-        <div className="mb-10 flex justify-center">
+        <div className="p-4 border-b border-indigo-400 flex justify-center">
           <img
             alt="Logo"
             className="rounded-full cursor-pointer border-2 border-white"
@@ -32,47 +59,93 @@ function AdminSideBar() {
           />
         </div>
 
-        {/* Menu Icons */}
-        <div className="flex flex-col space-y-8 text-white">
-          <div className="flex flex-col items-center cursor-pointer group">
-            <i
-              className="fas fa-cog text-2xl group-hover:text-red-300"
-              onClick={() => navigate("/admin/adminSettings")}
-            ></i>
-            <span className="text-sm text-transparent group-hover:text-white transition-all">
-              Settings
-            </span>
+        {/* Navigation */}
+        <nav className="flex-grow p-4 space-y-4">
+          {/* Ads Dropdown */}
+          <div>
+            <button
+              onClick={toggleCourseDropdown}
+              className="flex items-center justify-between w-full text-left hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+            >
+              <div className="flex items-center">
+                <FaAd className="mr-3 text-yellow-400" />
+                <span className="text-xl">Ads</span>
+              </div>
+              <svg
+                className={`w-4 h-4 transform transition-transform ${
+                  isAdsDropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {isAdsDropdownOpen && (
+              <div className="mt-2 space-y-2 pl-4">
+                <Link
+                  to="/addAds"
+                  className="block hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+                >
+                  Add Ads
+                </Link>
+                <Link
+                  to="/viewAds"
+                  className="block hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+                >
+                  View Ads
+                </Link>
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* Logout Button */}
-        <div
-          className="flex flex-col items-center cursor-pointer group mt-auto mb-6"
-          onClick={handleLogout}
-        >
-          <CiLogout className="text-white text-3xl group-hover:text-red-300" />{" "}
-          {/* Updated color and size */}
-          <span className="text-sm text-transparent group-hover:text-white transition-all">
-            Logout
-          </span>
-        </div>
+          {/* Other Links */}
+          <Link
+            to="/status"
+            className="flex items-center hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+          >
+            <FaChartBar className="mr-3" />
+            <span>Status</span>
+          </Link>
+
+          <Link
+            to="/admin/adminSettings"
+            className="flex items-center hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+          >
+            <FaCog className="mr-3" />
+            <span>Settings</span>
+          </Link>
+
+          <Link
+            to="/userDetails"
+            className="flex items-center hover:bg-purple-600 p-3 rounded-lg transition-all duration-300"
+          >
+            <MdGroup className="mr-3" />
+            <span>User Details</span>
+          </Link>
+
+          <button
+            onClick={() => navigate("/login")}
+            className="flex items-center w-full text-left hover:bg-red-600 p-3 rounded-lg transition-all duration-300"
+          >
+            <FaSignOutAlt className="mr-3" />
+            <span>Logout</span>
+          </button>
+        </nav>
       </div>
 
-      {/* Toggle Button (for mobile view) */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white hover:text-gray-300 focus:outline-none"
-        >
-          <i className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-3xl`}></i>
-        </button>
-      </div>
-
-      {/* Overlay (for mobile view) */}
+      {/* Overlay for Mobile View */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={toggleSidebar}
         ></div>
       )}
     </div>

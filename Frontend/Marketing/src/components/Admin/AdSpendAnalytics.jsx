@@ -62,13 +62,13 @@ function AdSpendAnalytics() {
     ((current - lastYear) / lastYear) * 100;
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 px-4 sm:px-8">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
         Ad Spend Analytics
       </h2>
-      <div className="flex flex-col sm:flex-row justify-between items-center space-x-6">
+      <div className="flex flex-col sm:flex-row justify-around items-center space-x-6">
         {/* Pie chart */}
-        <div className="w-full sm:w-2/3 lg:w-1/2 xl:w-1/3 mb-6 sm:mb-0">
+        <div className="w-full sm:w-2/3 lg:w-1/2 xl:w-1/3 mb-6 sm:mb-0 shadow-lg p-6 rounded-lg items-center">
           <Pie
             data={chartData}
             options={{
@@ -94,13 +94,13 @@ function AdSpendAnalytics() {
             return (
               <div
                 key={index}
-                className={`p-4 bg-gradient-to-r ${ad.color} from-${ad.color} to-opacity-60 rounded-lg shadow-lg flex items-center justify-between`}
+                className={`p-4 bg-gradient-to-r from-${ad.color} to-opacity-60 rounded-lg shadow-lg flex items-center`}
               >
                 <div className="p-3 rounded-full text-gray-800 shadow-md">
                   <i className="fas fa-chart-pie"></i>{" "}
                   {/* Add an appropriate icon */}
                 </div>
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full ml-4">
                   {/* Title for each box */}
                   <p className="text-lg font-extrabold">{ad.platform}</p>
                   <p className="text-xl font-extrabold">${ad.spend}</p>

@@ -28,7 +28,8 @@ function AdminSideBar() {
     <div>
       {/* Hamburger Menu for Mobile View */}
       <button
-        className="top-4 left-4 z-50 lg:hidden text-white bg-gradient-to-r from-pink-500 to-yellow-500 p-3 rounded-full"
+        className="top-4 z-50 lg:hidden text-white bg-gradient-to-r from-pink-500 to-yellow-500 p-3 rounded-full"
+        style={{ margin: "6px" }}
         onClick={toggleSidebar}
       >
         <FaBars size={24} />
@@ -41,7 +42,7 @@ function AdminSideBar() {
         } lg:translate-x-0 w-64 z-40 transition-transform duration-300`}
       >
         {/* Close Icon for Mobile */}
-        <div className="absolute top-4 right-4 z-50 lg:hidden">
+        <div className="absolute top-4 right-4 z-50 p-4 lg:hidden">
           <button onClick={toggleSidebar} className="text-white">
             <FaTimes size={24} />
           </button>

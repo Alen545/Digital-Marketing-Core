@@ -42,7 +42,6 @@ function AdSpendAnalytics() {
     },
   ];
 
-  // Prepare the chart data
   const chartData = {
     labels: data.map((ad) => ad.platform),
     datasets: [
@@ -56,34 +55,35 @@ function AdSpendAnalytics() {
     ],
   };
 
-  // Calculate the difference and percentage change
   const getDifference = (current, lastYear) => current - lastYear;
   const getPercentageChange = (current, lastYear) =>
     ((current - lastYear) / lastYear) * 100;
 
   return (
     <div className="mb-8 px-4 sm:px-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
         Ad Spend Analytics
       </h2>
-      <div className="flex flex-col sm:flex-row justify-around items-center space-x-6">
-        {/* Pie chart */}
-        <div className="w-full sm:w-2/3 lg:w-1/2 xl:w-1/3 mb-6 sm:mb-0 shadow-lg p-6 rounded-lg items-center">
-          <Pie
-            data={chartData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  position: "top",
+      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 space-y-6 sm:space-y-0">
+        {/* Pie Chart */}
+        <div className="w-full sm:w-2/3 lg:w-1/2 flex justify-center">
+          <div className="w-72 sm:w-full max-w-md lg:max-w-lg shadow-lg p-6 rounded-lg flex items-center justify-center bg-white">
+            <Pie
+              data={chartData}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: "top",
+                  },
                 },
-              },
-            }}
-          />
+              }}
+            />
+          </div>
         </div>
 
-        {/* Data Display (Right side with colorful design and comparison) */}
-        <div className="w-full sm:w-1/3 space-y-6">
+        {/* Right Side Data */}
+        <div className="w-full sm:w-1/3 lg:w-1/2 grid grid-cols-1 gap-4">
           {data.map((ad, index) => {
             const difference = getDifference(ad.spend, ad.lastYearSpend);
             const percentageChange = getPercentageChange(
@@ -94,38 +94,28 @@ function AdSpendAnalytics() {
             return (
               <div
                 key={index}
-                className={`p-4 bg-gradient-to-r from-${ad.color} to-opacity-60 rounded-lg shadow-lg flex items-center`}
+                className="p-4 rounded-lg shadow-md bg-gray-100"
+                style={{
+                  background: `linear-gradient(to right, ${ad.color}, ${ad.color}60)`,
+                }}
               >
                 <div className="p-3 rounded-full text-gray-800 shadow-md">
-                  <i className="fas fa-chart-pie"></i>{" "}
-                  {/* Add an appropriate icon */}
+                  <i className="fas fa-chart-pie"></i>
                 </div>
-                <div className="flex flex-col w-full ml-4">
-                  {/* Title for each box */}
+                <div className="mt-2">
                   <p className="text-lg font-extrabold">{ad.platform}</p>
                   <p className="text-xl font-extrabold">${ad.spend}</p>
-
-                  {/* Last Year Data */}
-                  <div className="mt-3 text-bold">
-                    <p className="text-red-600 font-bold">
-                      Last Year: ${ad.lastYearSpend}
-                    </p>
-                  </div>
-
-                  {/* Difference and Percentage Change */}
-                  <div className="flex justify-between items-center mt-3 text-md">
-                    <p className="text-amber-950 font-bold">Difference:</p>
-                    <p
-                      className={`font-extrabold ${
-                        percentageChange >= 0
-                          ? "text-green-500"
-                          : "text-red-500"
-                      }`}
-                    >
-                      {difference > 0 ? `+${difference}` : difference} (
-                      {percentageChange.toFixed(2)}%)
-                    </p>
-                  </div>
+                  <p className="text-red-600 font-bold mt-3">
+                    Last Year: ${ad.lastYearSpend}
+                  </p>
+                  <p
+                    className={`mt-3 font-extrabold ${
+                      percentageChange >= 0 ? "text-green-500" : "text-red-500"
+                    }`}
+                  >
+                    Difference: {difference > 0 ? `+${difference}` : difference} (
+                    {percentageChange.toFixed(2)}%)
+                  </p>
                 </div>
               </div>
             );

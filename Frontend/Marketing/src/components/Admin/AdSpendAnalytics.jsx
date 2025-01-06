@@ -64,10 +64,12 @@ function AdSpendAnalytics() {
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center sm:text-left">
         Ad Spend Analytics
       </h2>
-      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 space-y-6 sm:space-y-0">
+
+      {/* Responsive Layout */}
+      <div className="flex flex-col md:flex-row md:items-stretch gap-6">
         {/* Pie Chart */}
-        <div className="w-full sm:w-2/3 lg:w-1/2 flex justify-center">
-          <div className="w-72 sm:w-full max-w-md lg:max-w-lg shadow-lg p-6 rounded-lg flex items-center justify-center bg-white">
+        <div className="flex justify-center w-full md:w-2/3">
+          <div className="w-full sm:w-96 h-full max-h-[500px] shadow-lg p-6 rounded-lg bg-white flex items-center justify-center">
             <Pie
               data={chartData}
               options={{
@@ -82,8 +84,8 @@ function AdSpendAnalytics() {
           </div>
         </div>
 
-        {/* Right Side Data */}
-        <div className="w-full sm:w-1/3 lg:w-1/2 grid grid-cols-1 gap-4">
+        {/* Cards */}
+        <div className="flex flex-col w-full md:w-1/3 gap-4">
           {data.map((ad, index) => {
             const difference = getDifference(ad.spend, ad.lastYearSpend);
             const percentageChange = getPercentageChange(
@@ -94,7 +96,7 @@ function AdSpendAnalytics() {
             return (
               <div
                 key={index}
-                className="p-4 rounded-lg shadow-md bg-gray-100"
+                className="p-4 flex-grow rounded-lg shadow-md bg-gray-100 flex flex-col justify-between"
                 style={{
                   background: `linear-gradient(to right, ${ad.color}, ${ad.color}60)`,
                 }}
@@ -113,8 +115,8 @@ function AdSpendAnalytics() {
                       percentageChange >= 0 ? "text-green-500" : "text-red-500"
                     }`}
                   >
-                    Difference: {difference > 0 ? `+${difference}` : difference} (
-                    {percentageChange.toFixed(2)}%)
+                    Difference: {difference > 0 ? `+${difference}` : difference}{" "}
+                    ({percentageChange.toFixed(2)}%)
                   </p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ function GuestNav() {
 
   return (
     <div>
-      <header className="px-5 sm:px-10 py-3 lg:px-20 flex flex-wrap items-center justify-between bg-white shadow-md rounded-lg">
+      <header className="px-5 sm:px-10 py-3 lg:px-20 flex flex-wrap items-center justify-between bg-white  rounded-lg">
         {/* Logo */}
         <div className="flex-shrink-0">
           <h1

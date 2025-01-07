@@ -6,15 +6,27 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       {/* Navigation Section */}
       <GuestNav />
 
-      <div className="flex flex-1 lg:flex-row">
-        {/* Left Section (Login Form) */}
-        <div className="lg:w-1/2 xl:max-w-screen-sm p-10 ml-10">
-          <div className="text-center py-12 lg:bg-white rounded-xl ">
-            <h2 className="text-3xl font-semibold text-indigo-800 mb-6">
+      {/* Main Content */}
+      <div className="flex-1 grid grid-cols-1 md:grid-cols-2">
+        {/* Image Section (Visible on top for <600px, on right for ≥600px) */}
+        <div className="flex items-center justify-center ">
+          <div className="w-full max-w-xs transform duration-200 hover:scale-105">
+            <img
+              className="block md:order-last mx-auto w-2/3 sm:w-1/2 md:w-full max-h-40 sm:max-h-60 md:max-h-80 lg:max-h-96 h-auto rounded-lg shadow-lg"
+              src="https://plus.unsplash.com/premium_photo-1683872921964-25348002a392?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+              alt="Login illustration"
+            />
+          </div>
+        </div>
+
+        {/* Login Section */}
+        <div className="flex items-center justify-center bg-gray-50 p-8">
+          <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+            <h2 className="text-3xl font-semibold text-indigo-800 mb-6 text-center">
               🚀 Log in to your account
             </h2>
             <form className="space-y-5">
@@ -58,17 +70,6 @@ function Login() {
                 📝 Sign up
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Right Section (Image) */}
-        <div className="hidden lg:flex items-center justify-center bg-white flex-1">
-          <div className="max-w-xs transform duration-200 hover:scale-110">
-            <img
-              className="w-full h-auto max-w-sm lg:max-w-md xl:max-w-lg mx-auto rounded-lg shadow-lg"
-              src="https://plus.unsplash.com/premium_photo-1683872921964-25348002a392?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-              alt="Login illustration"
-            />
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ function GuestNav() {
   const navigate = useNavigate();
 
   const toggleNav = () => {
-    setNavOpen(!navOpen);
+    setNavOpen(!navOpen);s
   };
 
   const handleSearchChange = (e) => {
